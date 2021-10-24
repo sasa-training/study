@@ -7,6 +7,7 @@ body {
 
 a {
   cursor: pointer;
+  color: #2e68d4;
 }
 
 @media (max-width: 999px) {
@@ -81,6 +82,7 @@ header nav.gnavi ul li.gnavi_flow_icon {
   padding-left: 45px;
 }
 header nav.gnavi ul li a {
+  color: #463729;
   background: linear-gradient(#55b75a, #55b75a) right bottom/0 0.5em no-repeat;
   transition: background-size 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
@@ -252,6 +254,23 @@ header .toggle_btn.open_toggle span::after {
   margin-top: 15px;
   font-size: 19px;
 }
+.common_inner .page_heading {
+  position: relative;
+  display: block;
+  width: 100%;
+  background-color: #fff4ea;
+  padding: 20px 20px 20px 60px;
+  margin-bottom: 25px;
+}
+.common_inner .page_heading::before {
+  position: absolute;
+  content: "";
+  height: 28px;
+  width: 32px;
+  top: 15px;
+  left: 20px;
+  background: url(../img/icon_top2.png);
+}
 
 .heading_area {
   display: flex;
@@ -347,9 +366,34 @@ header .toggle_btn.open_toggle span::after {
   margin-right: 20px;
 }
 
+.page_heading_area {
+  height: 165px;
+  width: 100%;
+  background-color: #fff4ea;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media (max-width: 560px) {
+  .page_heading_area {
+    margin-top: 65px;
+  }
+}
+
+h1.heading01 {
+  font-size: 28px;
+  color: #463729;
+}
+
 section {
   padding: 30px 0;
   z-index: 1;
+}
+@media (max-width: 999px) {
+  section {
+    padding: 30px 10px;
+  }
 }
 section.top_about {
   background-color: #fff4ea;
@@ -361,6 +405,76 @@ section.top_flow {
 section.top_price {
   position: relative;
   background-color: #fff4ea;
+}
+section.page_about_overview table {
+  width: 100%;
+  height: auto;
+  border-collapse: separate;
+  border-spacing: 2px;
+}
+section.page_about_overview table th {
+  background-color: #d3efd2;
+  width: 235px;
+  text-align: center;
+  padding: 20px 0;
+}
+@media (max-width: 560px) {
+  section.page_about_overview table th {
+    display: block;
+    width: 100%;
+  }
+}
+section.page_about_overview table td {
+  background-color: #eaf7e9;
+  width: calc(100% - 235px);
+  padding: 20px 0 20px 30px;
+}
+@media (max-width: 560px) {
+  section.page_about_overview table td {
+    display: block;
+    width: 100%;
+  }
+}
+section.page_about_philosopy dl {
+  margin-bottom: 15px;
+}
+section.page_about_philosopy dl dt {
+  margin-bottom: 10px;
+}
+section.page_about_philosopy dl dd.icon_star {
+  position: relative;
+  padding-left: 15px;
+}
+section.page_about_philosopy dl dd.icon_star::before {
+  position: absolute;
+  content: url("../img/dd_icon.png");
+  height: 10px;
+  width: 11px;
+  top: -2px;
+  left: 0px;
+}
+section.page_about_flow {
+  margin-bottom: 140px;
+}
+section.page_about_flow dl {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  justify-content: flex-start;
+  align-items: center;
+}
+section.page_about_flow dl dt {
+  margin-right: 20px;
+  padding: 10px 20px;
+  background-color: #e95c66;
+  color: #FFF;
+  border-radius: 5px;
+}
+section.page_about_flow dl dd {
+  color: #e95c66;
+}
+section.page_about_flow p {
+  margin-bottom: 20px;
 }
 
 .bg_img_wrap {
@@ -418,6 +532,10 @@ section.top_price {
     height: 0;
     width: 0;
   }
+}
+
+footer {
+  text-align: center;
 }
 
 /*----------------*/
