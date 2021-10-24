@@ -4,97 +4,134 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/destyle.css@1.0.15/destyle.css"/>
+    <link rel="stylesheet" href="css/destyle.css">
     <link rel="stylesheet" href="css/style.css"/>
+    <link href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
     <title>きのめ保育園</title>
 </head>
 <body>
     <header>
-        <div class="common_inner"></div>
-            <h1><a href=""><img src="#" alt="きのめ保育園"></a></h1>
-            <nav>
+        <div class="common_inner">
+            <h1><a href=""><img src="img/logo.png" alt="きのめ保育園"></a></h1>
+            <nav class="gnavi">
                 <ul>
-                    <li class="gnavi_icon gnavi_top_icon"><a href="">TOP</a></li>
-                    <li class="gnavi_icon gnavi_about_icon"><a href="">きのめ保育園について</a></li>
-                    <li class="gnavi_icon gnavi_flow_icon"><a href="">一日の流れ</a></li>
-                    <li class="gnavi_icon gnavi_price_icon"><a href="">料金</a></li>
+                    <li class="gnavi_icon gnavi_top_icon"><a href="#">TOP</a></li>
+                    <li class="gnavi_icon gnavi_about_icon"><a href="#">きのめ保育園について</a></li>
+                    <li class="gnavi_icon gnavi_flow_icon"><a href="#">一日の流れ</a></li>
+                    <li class="gnavi_icon gnavi_price_icon"><a href="#">料金</a></li>
                 </ul>
             </nav>
+            <button class="toggle_btn">
+                <span></span>
+            </button>
         </div>
     </header>
-    <div class="main_visual">
-        <div></div>
-        <div></div>
-        <div></div>
-    </div>
-    <div class="news">
-        <h2 class="top_news_heading">
-            新着情報
-        </h2>
-        <div>
-            <dl>
-                <dt>2019.3.15</dt>
-                <dd>ホームページを開設しました。</dd>
-            </dl>
-            <dl>
-                <dt>2019.3.15</dt>
-                <dd>リンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンク</dd>
-            </dl>
+    <div class="swiper main_visual">
+        <div class="panel_inner swiper-wrapper">
+            <div class="swiper-slide">
+                    <img src="img/key01.jpg" alt="*">
+            </div>
+            <div class="swiper-slide">
+                    <img src="img/key02.jpg" alt="*">
+            </div>
+            <div class="swiper-slide">
+                    <img src="img/key03.jpg" alt="*">
+            </div>
+        </div>
+        <div class="wave_down"></div>
+        <div class="wave_up"></div>
+        <div class="news">
+            <h2 class="top_news_heading">
+                新着情報
+            </h2>
+            <div>
+                <dl>
+                    <dt>2019.3.15</dt>
+                    <dd>ホームページを開設しました。</dd>
+                </dl>
+                <dl>
+                    <dt>2019.3.15</dt>
+                    <dd>リンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンクリンク</dd>
+                </dl>
+            </div>
         </div>
     </div>
     <main>
         <section class="top_about">
-            <h2 class="heading_top_common">きのめ保育園について</h2>
-            <div class="common_inner">
-                <ul>
-                    <li>
-                        <img src="#" alt="保育園の概要">
-                        <h3 class="pink_arrow">保育園の概要</h3>
-                    </li>
-                    <li>
-                        <img src="#" alt="保育理念・保育方針・
-                        保育目標">
-                        <h3 class="pink_arrow">保育理念・保育方針・<br>
-                            保育目標</h3>
-                    </li>
-                    <li>
-                        <img src="#" alt="法人間のご契約の流れ">
-                        <h3 class="pink_arrow">法人間のご契約の流れ</h3>
-                    </li>
-                    <li>
-                        <img src="#" alt="企業主導型保育園とは">
-                        <h3 class="pink_arrow">企業主導型保育園とは</h3>
-                    </li>
-                    <li>
-                        <img src="#" alt="入園決定までの流れ">
-                        <h3 class="pink_arrow">入園決定までの流れ</h3>
-                    </li>
-                </ul>
+            <div class="bg_img_wrap">
+                <div class="heading_area">
+                    <h2 class="heading_top_common">きのめ保育園について</h2>
+                </div>
+                <div class="common_inner">
+                    <ul class="top_inner">
+                        <li>
+                            <a href="#"><img src="img/about.png" alt="保育園の概要"></a>
+                            <h3><i class="fas fa-arrow-circle-right icon_color_pink"></i>保育園の概要</h3>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/phirosophy.png" alt="保育理念・保育方針・
+                            保育目標"></a>
+                            <h3><i class="fas fa-arrow-circle-right icon_color_pink"></i>保育理念・保育方針・<br>
+                                保育目標</h3>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/flow.png" alt="法人間のご契約の流れ"></a>
+                            <h3><i class="fas fa-arrow-circle-right icon_color_pink"></i>法人間のご契約の流れ</h3>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/company.png" alt="企業主導型保育園とは"></a>
+                            <h3><i class="fas fa-arrow-circle-right icon_color_pink"></i>企業主導型保育園とは</h3>
+                        </li>
+                        <li>
+                            <a href="#"><img src="img/school_flow.png" alt="入園決定までの流れ"></a>
+                            <h3><i class="fas fa-arrow-circle-right icon_color_pink"></i>入園決定までの流れ</h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg_about"></div>
             </div>
+            <div class="wave_up02"></div>
         </section>
         <section class="top_flow">
-            <h2 class="heading_top_common">一日の流れ</h2>
-            <div class="common_inner">
-                <ul>
-                    <li>
-                        <img src="#" alt="１日の保育の流れ">
-                        <h3 class="pink_arrow">１日の保育の流れ</h3>
-                    </li>
-                    <li>
-                        <img src="#" alt="年間行事">
-                        <h3 class="pink_arrow">年間行事</h3>
-                    </li>
+            <div class="bg_img_wrap">
+                <div class="heading_area">
+                <h2 class="heading_top_common">一日の流れ</h2>
+                </div>
+                <div class="common_inner">
+                    <ul class="top_inner">
+                        <li>
+                            <a href="#"><img class="orange" src="img/day_flow.png" alt="１日の保育の流れ"></a>
+                            <h3><i class="fas fa-arrow-circle-right icon_color_pink"></i>１日の保育の流れ</h3>
+                        </li>
+                        <li>
+                            <a href="#"><img class="orange" src="img/event.png" alt="年間行事"></a>
+                            <h3><i class="fas fa-arrow-circle-right icon_color_pink"></i>年間行事</h3>
+                        </li>
+                </div>
+                <div class="bg_flow"></div>
             </div>
+            <div class="wave_up03"></div>
         </section>
         <section class="top_price">
-            <h2 class="heading_top_common">料金</h2>
-            <div class="common_inner">
-                <ul>
-                    <li>
-                        <img src="#" alt="保育料金について">
-                        <h3 class="pink_arrow">保育料金について</h3>
-                    </li>
-                </ul>
+            <div class="bg_img_wrap">
+                <div class="heading_area">
+                    <h2 class="heading_top_common">料金</h2>
+                </div>
+                <div class="common_inner">
+                    <ul class="top_inner">
+                        <li>
+                            <a href="#"><img src="img/price.png" alt="保育料金について"></a>
+                            <h3><i class="fas fa-arrow-circle-right icon_color_pink"></i>保育料金について</h3>
+                        </li>
+                    </ul>
+                </div>
+                <div class="bg_price"></div>
             </div>
+            <div class="wave_up02"></div>
         </section>
     </main>
     <footer>
