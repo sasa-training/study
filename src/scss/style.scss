@@ -1,1 +1,612 @@
 @charset "UTF-8";
+
+$pc_tab: 999px; // PC・タブレット
+$tab: 800px;  // タブレット
+$tab_sp: 700px;  // タブレット
+$sp: 560px;  // sp
+
+@mixin pc_tab {
+  @media (max-width: ($pc_tab)) {
+    @content;
+  }
+}
+@mixin tab {
+  @media (max-width: ($tab)) {
+    @content;
+  }
+}
+
+@mixin tab_sp {
+    @media (max-width: ($tab_sp)) {
+      @content;
+    }
+  }
+@mixin sp {
+  @media (max-width: ($sp)) {
+    @content;
+  }
+}
+
+
+body {
+    color: #463729;
+    font-size: 16px;
+    line-height: 25px;
+    background-color: #FFF;
+}
+
+a {
+    cursor: pointer;
+    color: #2e68d4;
+}
+
+header, .main_visual , section ,footer {
+    @include pc_tab {
+        padding: 0 10px;
+    }
+}
+
+header {
+    @include tab_sp {
+        padding: 0;
+    }
+}
+
+img {
+    max-width: 100%;
+    width: 100%;
+}
+
+header {
+    margin-top: 45px;
+    width: 100%;
+    position: relative;
+    @include tab_sp {
+        margin-top: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 60px;
+        z-index: 10000;
+        background-color: #FFF;
+    }
+    h1 img {
+        max-width: 189px;
+        width: 100%;
+        @include tab_sp {
+            margin: 15px;
+        }
+    }
+    nav.gnavi{
+        width: 100%;
+        margin: 30px 0 25px 0;
+        @include tab_sp {
+            margin: 0;
+            position: fixed;
+            background-color: #FFF;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            @include tab_sp {
+                display: none;
+            }
+            li {
+                font-size: 18px;
+                margin: 30px;
+                &.gnavi_flow_icon {
+                    padding-left: 45px;
+                }
+                a {
+                    color: #463729;
+                    background: linear-gradient(#55b75a, #55b75a) right bottom / 0 .5em no-repeat;
+	                transition: background-size .4s cubic-bezier(0.215, 0.61, 0.355, 1);
+                    &:hover {
+                        background-position: left bottom;
+	                    background-size: 100% .5em;
+                    }
+                }
+            }
+        }
+        &.open_toggle {
+            ul {
+                display: block;
+                width: 100%;
+                margin: 20px 0 10px;
+            }
+        }
+    }
+    .toggle_btn {
+        background-color: #55b75a;
+        position: fixed;
+        width: 45px;
+        height: 45px;
+        right: 15px;
+        top: 5px;
+        display: none;
+        @include tab_sp {
+            display: block;
+        }
+        span{
+            position: absolute;
+            top: 20px;
+            left: 5px;
+            width: 35px;
+            height: 4px;
+            display: block;
+            background-color: #FFF;
+            transition: all .5s;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -12px;
+            left: 0px;
+            width: 35px;
+            height: 4px;
+            background-color: #FFF;
+            }
+        &::after {
+            content: "";
+            position: absolute;
+            top: 12px;
+            left: 0px;
+            width: 35px;
+            height: 4px;
+            background-color: #FFF;
+            }
+        }
+        &.open_toggle {
+            span {
+                background: rgba(30,30,30,0);
+                transition: all .5s;
+            }
+            span::before {
+                transform: rotate(45deg);
+                    top: 0px;
+            }
+            span::after {
+                transform: rotate(-45deg);
+                    top: 0px;
+            }
+        }
+    }
+}
+
+.gnavi_icon {
+    position: relative;
+    padding-left: 30px;
+}
+
+.gnavi_top_icon::before {
+    position: absolute;
+    content: '';
+    height: 25px;
+    width: 25px;
+    top:-2;
+    left: 0;
+    background:url(../img/icon_top.png);
+}
+
+.gnavi_about_icon::before {
+    position: absolute;
+    content: '';
+    height: 25px;
+    width: 26px;
+    top:-2;
+    left: 0;
+    background:url(../img/icon_about.png);
+}
+
+.gnavi_flow_icon::before {
+    position: absolute;
+    content: '';
+    height: 25px;
+    width: 42px;
+    top:-2;
+    left: 0;
+    background:url(../img/icon_flow.png);
+}
+
+.gnavi_price_icon::before {
+    position: absolute;
+    content: '';
+    height: 25px;
+    width: 25px;
+    top:-3;
+    left: 0;
+    background:url(../img/icon_price.png);
+}
+
+.main_visual {
+    position: relative;
+    @include tab_sp {
+        margin-top: 65px;
+    }
+}
+
+.common_inner {
+    max-width: 1000px;
+    width: 100%;
+    margin: 0px auto;
+    ul.top_inner {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        li {
+            width:calc( 100%/3);
+            text-align: center;
+            @include tab {
+                width:50% ;
+            }
+            @include sp {
+                width:100% ;
+                margin-bottom: 30px;
+            }
+            img {
+                height: 242px;
+                width: 242px;
+                border-radius: 50%;
+                -o-object-fit: cover;
+                   object-fit: cover;
+                opacity: 1;
+                &:hover {
+                    -webkit-animation: flash 1.5s;
+                animation: flash 1.5s;
+                @-webkit-keyframes flash {
+                    0% {
+                      opacity: .4;
+                    }
+                    100% {
+                      opacity: 1;
+                    }
+                  }
+                  @keyframes flash {
+                    0% {
+                      opacity: .4;
+                    }
+                    100% {
+                      opacity: 1;
+                    }
+                  }
+                }
+                &.orange {
+                    background-color: #fff4ea;
+                }
+            }
+            h3 {
+                margin-top: 15px;
+                font-size: 19px;
+            }
+        }
+    }
+    .page_heading {
+        position: relative;
+        display: block;
+        width: 100%;
+        background-color: #fff4ea;
+        padding: 20px 20px 20px 60px;
+        margin-bottom: 25px;
+    }
+    .page_heading::before {
+        position: absolute;
+        content: '';
+        height: 28px;
+        width: 32px;
+        top:15px;
+        left: 20px;
+        background:url(../img/icon_top2.png);
+    }
+}
+
+
+.heading_area {
+    display: flex;
+    justify-content: center;     
+    margin-bottom:50px;
+}
+
+.heading_top_common {
+    font-size: 30px;
+    text-align: center;
+    position: relative;
+    width: initial;
+    display: inline-block;
+}
+
+.heading_top_common::before {
+    content: url("../img/heading_icon.png");
+    height: 66px;
+    width: 94px;
+    display: block;
+    margin: 0 auto 25px;
+}
+
+.icon_color_pink {
+    color:#e95c66;
+    margin-right: 5px;
+}
+
+.news {
+    max-width: 1000px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px 14px;
+    position: absolute;
+    background-color: #FFF;
+    bottom: -20px;
+    z-index: 10000;
+    right: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    border: 4px solid #55b75a;
+    border-radius: 10px;
+    @include pc_tab {
+        width: 90%;
+    }
+    @include tab {
+        flex-direction: column;
+    }
+    @include sp {
+        bottom: -100px;
+    }
+    h2.top_news_heading {
+        width: 154px;
+        padding: 0 35px 0 45px;
+        color: #55b75a;
+        font-size: 18px;
+        position: relative;
+    }
+    h2.top_news_heading::before {
+        position: absolute;
+        content: url("../img/news_icon.png");
+        height: 28px;
+        width: 31px;
+        top:-5px;
+        left: 10px;
+    }
+    div {
+        width: calc(100% - 154px);
+    }
+    dl {
+        display: flex;
+        flex-direction: row;
+        align-content: center;
+        @include sp {
+            flex-direction: column;
+        }
+        dt {
+            margin-right: 20px;
+        }
+    }
+}
+
+.page_heading_area {
+    height: 165px;
+    width: 100%;
+    background-color: #fff4ea;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include sp {
+        margin-top: 65px;
+    }
+}
+
+h1.heading01 {
+    font-size: 28px;
+    color: #463729;
+}
+
+section {
+    padding: 30px 0;
+    z-index: 1;
+    @include pc_tab {
+        padding: 30px 10px;
+    }
+    &.top_about {
+        background-color: #fff4ea;
+        position: relative;
+    }
+    &.top_flow {
+        position: relative;
+    }
+    &.top_price {
+        position: relative;
+        background-color: #fff4ea;
+    }
+    &.page_about_overview {
+        table {
+            width: 100%;
+            height: auto;
+            border-collapse: separate;
+            border-spacing: 2px;
+            th {
+                background-color: #d3efd2;
+                width: 235px;
+                text-align: center;
+                padding: 20px 0;
+                @include sp() {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            td {
+                background-color: #eaf7e9;
+                width:calc(100% - 235px);
+                padding: 20px 0 20px 30px;
+                @include sp() {
+                    display: block;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    &.page_about_philosopy {
+        dl {
+            margin-bottom: 15px;
+            dt {
+                margin-bottom: 10px;
+            }
+            dd.icon_star {
+                position: relative;
+                padding-left: 15px;
+                &::before {
+                    position: absolute;
+                    content: url("../img/dd_icon.png");
+                    height: 10px;
+                    width: 11px;
+                    top:-2px;
+                    left: 0px;
+                }
+            }
+        }
+
+    }
+    &.page_about_flow {
+        margin-bottom: 140px;
+        dl {
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 20px;
+            justify-content: flex-start;
+            align-items: center;
+            dt {
+                margin-right: 20px;
+                padding: 10px 20px;
+                background-color: #e95c66;
+                color: #FFF;
+                border-radius: 5px;
+            }
+            dd {
+                color: #e95c66;
+                }
+            }
+        p {
+            margin-bottom: 20px;
+        }
+
+    }
+}
+
+.bg_img_wrap {
+    position: relative;
+    max-width: 1000px;
+    width: 100%;
+    margin: 0 auto;
+    height: 100%;
+    overflow: hidden;
+    .bg_about {
+        position: absolute;
+        background: url("../img/about_bg.png") no-repeat center;
+        left: auto;
+        right: auto;
+        height: 829px;
+        width: 1029px;
+        top: 10px;
+        z-index: -1;
+        @include pc_tab {
+            height: 0;
+            width: 0;
+        }
+    }
+    .bg_flow {
+        position: absolute;
+        background: url("../img/flow_bg.png") no-repeat center;
+        left: auto;
+        right: auto;
+        z-index: -1;
+        height: 572px;
+        width: 1029px;
+        top: -90px;
+        @include pc_tab {
+            height: 0;
+            width: 0;
+        }
+    }
+    .bg_price {
+        position: absolute;
+        background: url("../img/price_bg.png") no-repeat center;
+        left: auto;
+        right: auto;
+        z-index: -1;
+        height: 550px;
+        width: 1029px;
+        top: 10px;
+        @include pc_tab {
+            height: 0;
+            width: 0;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+}
+
+
+/*----------------*/
+/*  SCALLOP down  */
+/*----------------*/
+
+  .wave_down{
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0px;
+    height:15px;
+    width:100%;
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(#fff), color-stop(0.5, #fff), color-stop(0.6, rgba(255,255,255,0)), to(rgba(255,255,255,0)));
+  -webkit-background-size: 32px 100%;
+  }
+
+  .wave_up{
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    bottom: 0px;
+    height:15px;
+    width:100%;
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(rgba(255,255,255,0)), color-stop(0.5, rgba(255,255,255,0)), color-stop(0.6, #fff4ea), to(#fff4ea));
+  -webkit-background-size: 32px 100%;
+  }
+
+  .wave_down02{
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    top: 0px;
+    height:15px;
+    width:100%;
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(#fff), color-stop(0.5, #fff), color-stop(0.6, rgba(255,255,255,0)), to(rgba(255,255,255,0)));
+  -webkit-background-size: 32px 100%;
+  }
+
+  .wave_up02{
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+    height:15px;
+    width:100%;
+    background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(rgba(255,255,255,0)), color-stop(0.5, rgba(255,255,255,0)), color-stop(0.5, #FFF), to(#FFF));
+  -webkit-background-size: 32px 100%;
+  }
+
+  .wave_up03{
+    position: absolute;
+    z-index: 1000;
+    left: 0;
+    bottom: 0;
+    height:15px;
+    width:100%;
+    background: -webkit-gradient(radial, 50% 0, 20, 50% 0, 10, from(#fff4ea), color-stop(0.5, #fff4ea), color-stop(0.5, rgba(255,255,255,0)), to(rgba(255,255,255,0)));
+  -webkit-background-size: 32px 100%;
+  }
