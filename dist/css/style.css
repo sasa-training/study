@@ -403,6 +403,7 @@ section.top_flow {
   position: relative;
 }
 section.top_price {
+  padding-bottom: 45px;
   position: relative;
   background-color: #fff4ea;
 }
@@ -536,6 +537,7 @@ section.page_about_flow p {
 
 footer {
   text-align: center;
+  padding: 30px 0 40px;
 }
 
 /*----------------*/
