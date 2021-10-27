@@ -32,7 +32,7 @@ body {
     color: #463729;
     font-size: 16px;
     line-height: 25px;
-    background-color: #FFF;
+    /*--background-color: #FFF;--*/
 }
 
 a {
@@ -49,6 +49,16 @@ header, .main_visual , section ,footer {
 header {
     @include tab_sp {
         padding: 0;
+    }
+    &::after{
+        content: '';
+        display: block;
+        z-index: 100000;
+        height:15px;
+        width:100%;
+        margin-bottom: -15px;
+        background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(#fff), color-stop(0.5, #fff), color-stop(0.6, rgba(255,255,255,0)), to(rgba(255,255,255,0)));
+      -webkit-background-size: 32px 100%;
     }
 }
 
@@ -174,12 +184,16 @@ header {
     }
 }
 
+.swiper {
+    z-index: -1 !important;
+}
+
 .gnavi_icon {
     position: relative;
     padding-left: 30px;
 }
 
-.gnavi_top_icon::before {
+.gnavi_top_icon a::before {
     position: absolute;
     content: '';
     height: 25px;
@@ -189,7 +203,7 @@ header {
     background:url(../img/icon_top.png);
 }
 
-.gnavi_about_icon::before {
+.gnavi_about_icon a::before {
     position: absolute;
     content: '';
     height: 25px;
@@ -199,7 +213,7 @@ header {
     background:url(../img/icon_about.png);
 }
 
-.gnavi_flow_icon::before {
+.gnavi_flow_icon a::before {
     position: absolute;
     content: '';
     height: 25px;
@@ -209,7 +223,7 @@ header {
     background:url(../img/icon_flow.png);
 }
 
-.gnavi_price_icon::before {
+.gnavi_price_icon a::before {
     position: absolute;
     content: '';
     height: 25px;
@@ -224,6 +238,17 @@ header {
     @include tab_sp {
         margin-top: 65px;
     }
+}
+
+main.top::before {
+        content: '';
+        display: block;
+        margin-top: -15px;
+        z-index: 1000;
+        height:15px;
+        width:100%;
+        background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(rgba(255,255,255,0)), color-stop(0.5, rgba(255,255,255,0)), color-stop(0.6, #fff4ea), to(#fff4ea));
+      -webkit-background-size: 32px 100%;
 }
 
 .common_inner {
@@ -308,7 +333,7 @@ header {
 }
 
 .heading_top_common {
-    font-size: 30px;
+    font-size: 26px;
     text-align: center;
     position: relative;
     width: initial;
@@ -353,8 +378,8 @@ header {
     @include tab {
         flex-direction: column;
     }
-    @include sp {
-        bottom: -100px;
+    @include tab_sp {
+        display: none;
     }
     h2.top_news_heading {
         width: 154px;
@@ -414,14 +439,33 @@ section {
     &.top_about {
         background-color: #fff4ea;
         position: relative;
+        a{
+            color: #463729 ;
+        }
     }
     &.top_flow {
         position: relative;
+        a{
+            color: #463729;
+        }
+        &::before {
+                content: '';
+                display: block;
+                margin-bottom: -15px;
+                z-index: 1000;
+                height:15px;
+                width:100%;
+                background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(rgba(255,255,255,0)), color-stop(0.5, rgba(255,255,255,0)), color-stop(0.5, #FFF), to(#FFF));
+              -webkit-background-size: 32px 100%;
+        }
     }
     &.top_price {
         padding-bottom: 45px;
         position: relative;
         background-color: #fff4ea;
+        a{
+            color: #463729;
+        }
     }
     &.page_about_overview {
         table {
@@ -456,7 +500,7 @@ section {
             dt {
                 margin-bottom: 10px;
             }
-            dd.icon_star {
+            .icon_star {
                 position: relative;
                 padding-left: 15px;
                 &::before {
@@ -503,48 +547,39 @@ section {
     width: 100%;
     margin: 0 auto;
     height: 100%;
-    overflow: hidden;
     .bg_about {
         position: absolute;
-        background: url("../img/about_bg.png") no-repeat center;
-        left: auto;
-        right: auto;
-        height: 829px;
-        width: 1029px;
-        top: 10px;
+        left: 0;
+        top: 0;
         z-index: -1;
-        @include pc_tab {
-            height: 0;
-            width: 0;
-        }
+        background: url("../img/top_about_top_left.png"), url("../img/top_about_top_right.png"), url("../img/top_about_bottom_left.png"), url("../img/top_about_bottom_right.png");
+        background-repeat: no-repeat,no-repeat ;
+        background-position: top left, top right ,bottom left, bottom right;
+        height: 100%;
+        width: 100%;
+
     }
     .bg_flow {
         position: absolute;
-        background: url("../img/flow_bg.png") no-repeat center;
-        left: auto;
-        right: auto;
+        left: 0;
+        top: 0;
         z-index: -1;
-        height: 572px;
-        width: 1029px;
-        top: -90px;
-        @include pc_tab {
-            height: 0;
-            width: 0;
-        }
+        background: url("../img/top_flow_left.png"), url("../img/top_flow_right.png");
+        background-repeat: no-repeat,no-repeat ;
+        background-position: top left, top right;
+        height: 100%;
+        width: 100%;
     }
     .bg_price {
         position: absolute;
-        background: url("../img/price_bg.png") no-repeat center;
-        left: auto;
-        right: auto;
+        left: 0;
+        top: 0;
         z-index: -1;
-        height: 550px;
-        width: 1029px;
-        top: 10px;
-        @include pc_tab {
-            height: 0;
-            width: 0;
-        }
+        background: url("../img/top_price_left.png"), url("../img/top_price_right.png");
+        background-repeat: no-repeat,no-repeat ;
+        background-position: top left, top right;
+        height: 100%;
+        width: 100%;
     }
 }
 

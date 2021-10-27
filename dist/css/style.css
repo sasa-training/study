@@ -2,7 +2,7 @@ body {
   color: #463729;
   font-size: 16px;
   line-height: 25px;
-  background-color: #FFF;
+  /*--background-color: #FFF;--*/
 }
 
 a {
@@ -20,6 +20,16 @@ a {
   header {
     padding: 0;
   }
+}
+header::after {
+  content: "";
+  display: block;
+  z-index: 100000;
+  height: 15px;
+  width: 100%;
+  margin-bottom: -15px;
+  background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(#fff), color-stop(0.5, #fff), color-stop(0.6, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+  -webkit-background-size: 32px 100%;
 }
 
 img {
@@ -150,12 +160,16 @@ header .toggle_btn.open_toggle span::after {
   top: 0px;
 }
 
+.swiper {
+  z-index: -1 !important;
+}
+
 .gnavi_icon {
   position: relative;
   padding-left: 30px;
 }
 
-.gnavi_top_icon::before {
+.gnavi_top_icon a::before {
   position: absolute;
   content: "";
   height: 25px;
@@ -165,7 +179,7 @@ header .toggle_btn.open_toggle span::after {
   background: url(../img/icon_top.png);
 }
 
-.gnavi_about_icon::before {
+.gnavi_about_icon a::before {
   position: absolute;
   content: "";
   height: 25px;
@@ -175,7 +189,7 @@ header .toggle_btn.open_toggle span::after {
   background: url(../img/icon_about.png);
 }
 
-.gnavi_flow_icon::before {
+.gnavi_flow_icon a::before {
   position: absolute;
   content: "";
   height: 25px;
@@ -185,7 +199,7 @@ header .toggle_btn.open_toggle span::after {
   background: url(../img/icon_flow.png);
 }
 
-.gnavi_price_icon::before {
+.gnavi_price_icon a::before {
   position: absolute;
   content: "";
   height: 25px;
@@ -202,6 +216,17 @@ header .toggle_btn.open_toggle span::after {
   .main_visual {
     margin-top: 65px;
   }
+}
+
+main.top::before {
+  content: "";
+  display: block;
+  margin-top: -15px;
+  z-index: 1000;
+  height: 15px;
+  width: 100%;
+  background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(0.6, #fff4ea), to(#fff4ea));
+  -webkit-background-size: 32px 100%;
 }
 
 .common_inner {
@@ -279,7 +304,7 @@ header .toggle_btn.open_toggle span::after {
 }
 
 .heading_top_common {
-  font-size: 30px;
+  font-size: 26px;
   text-align: center;
   position: relative;
   width: initial;
@@ -329,9 +354,9 @@ header .toggle_btn.open_toggle span::after {
     flex-direction: column;
   }
 }
-@media (max-width: 560px) {
+@media (max-width: 700px) {
   .news {
-    bottom: -100px;
+    display: none;
   }
 }
 .news h2.top_news_heading {
@@ -399,13 +424,32 @@ section.top_about {
   background-color: #fff4ea;
   position: relative;
 }
+section.top_about a {
+  color: #463729;
+}
 section.top_flow {
   position: relative;
+}
+section.top_flow a {
+  color: #463729;
+}
+section.top_flow::before {
+  content: "";
+  display: block;
+  margin-bottom: -15px;
+  z-index: 1000;
+  height: 15px;
+  width: 100%;
+  background: -webkit-gradient(radial, 50% 0, 10, 50% 0, 20, from(rgba(255, 255, 255, 0)), color-stop(0.5, rgba(255, 255, 255, 0)), color-stop(0.5, #FFF), to(#FFF));
+  -webkit-background-size: 32px 100%;
 }
 section.top_price {
   padding-bottom: 45px;
   position: relative;
   background-color: #fff4ea;
+}
+section.top_price a {
+  color: #463729;
 }
 section.page_about_overview table {
   width: 100%;
@@ -442,11 +486,11 @@ section.page_about_philosopy dl {
 section.page_about_philosopy dl dt {
   margin-bottom: 10px;
 }
-section.page_about_philosopy dl dd.icon_star {
+section.page_about_philosopy dl .icon_star {
   position: relative;
   padding-left: 15px;
 }
-section.page_about_philosopy dl dd.icon_star::before {
+section.page_about_philosopy dl .icon_star::before {
   position: absolute;
   content: url("../img/dd_icon.png");
   height: 10px;
@@ -484,55 +528,39 @@ section.page_about_flow p {
   width: 100%;
   margin: 0 auto;
   height: 100%;
-  overflow: hidden;
 }
 .bg_img_wrap .bg_about {
   position: absolute;
-  background: url("../img/about_bg.png") no-repeat center;
-  left: auto;
-  right: auto;
-  height: 829px;
-  width: 1029px;
-  top: 10px;
+  left: 0;
+  top: 0;
   z-index: -1;
-}
-@media (max-width: 999px) {
-  .bg_img_wrap .bg_about {
-    height: 0;
-    width: 0;
-  }
+  background: url("../img/top_about_top_left.png"), url("../img/top_about_top_right.png"), url("../img/top_about_bottom_left.png"), url("../img/top_about_bottom_right.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, top right, bottom left, bottom right;
+  height: 100%;
+  width: 100%;
 }
 .bg_img_wrap .bg_flow {
   position: absolute;
-  background: url("../img/flow_bg.png") no-repeat center;
-  left: auto;
-  right: auto;
+  left: 0;
+  top: 0;
   z-index: -1;
-  height: 572px;
-  width: 1029px;
-  top: -90px;
-}
-@media (max-width: 999px) {
-  .bg_img_wrap .bg_flow {
-    height: 0;
-    width: 0;
-  }
+  background: url("../img/top_flow_left.png"), url("../img/top_flow_right.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, top right;
+  height: 100%;
+  width: 100%;
 }
 .bg_img_wrap .bg_price {
   position: absolute;
-  background: url("../img/price_bg.png") no-repeat center;
-  left: auto;
-  right: auto;
+  left: 0;
+  top: 0;
   z-index: -1;
-  height: 550px;
-  width: 1029px;
-  top: 10px;
-}
-@media (max-width: 999px) {
-  .bg_img_wrap .bg_price {
-    height: 0;
-    width: 0;
-  }
+  background: url("../img/top_price_left.png"), url("../img/top_price_right.png");
+  background-repeat: no-repeat, no-repeat;
+  background-position: top left, top right;
+  height: 100%;
+  width: 100%;
 }
 
 footer {
