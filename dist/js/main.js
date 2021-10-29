@@ -1,13 +1,33 @@
 $(function() {
-    // ナビ
-      $('.toggle_btn').click(function() {
-        $(this).toggleClass('open_toggle');
-    if ($(this).hasClass('open_toggle')) {
-      $('nav').addClass('open_toggle');
+  // ナビ
+    $('.toggle_btn').click(function() {
+      $(this).toggleClass('open_toggle');
+  if ($(this).hasClass('open_toggle')) {
+    $('nav').addClass('open_toggle');
+  } else {
+    $('nav').removeClass('open_toggle');
+  }
+  });
+// リロード時
+  // ウィンドウサイズ768px以下の場合、クラスを削除
+  if (window.matchMedia( '(max-width: 700px)' ).matches) {
     } else {
-      $('nav').removeClass('open_toggle');
-    }
-    });
+      $(function(){
+        $('nav').removeClass('open_toggle');
+        $('button').removeClass('open_toggle');
+      });
+  };
+  // リサイズ時
+$(window).resize(function(){
+  let x = $(window).width();
+  let y = 700;
+  if (x <= y) {
+  }
+  else {
+    $('nav').removeClass('open_toggle');
+    $('button').removeClass('open_toggle');
+  }
+});
     // スライダー
     let mySwiper = new Swiper ('.swiper', {
         centeredSlides: true,

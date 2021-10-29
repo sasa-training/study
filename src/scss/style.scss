@@ -2,7 +2,7 @@
 
 $pc_tab: 999px; // PC・タブレット
 $tab: 800px;  // タブレット
-$tab_sp: 700px;  // タブレット
+$tab_sp: 700px;  // SP・タブレット
 $sp: 560px;  // sp
 
 @mixin pc_tab {
@@ -40,9 +40,13 @@ a {
     color: #2e68d4;
 }
 
-header, .main_visual , section ,footer {
+.header_wrap, .main_visual , section ,footer {
+    padding: 0;
     @include pc_tab {
         padding: 0 10px;
+    }
+    @include tab {
+        padding: 0;
     }
 }
 
@@ -58,7 +62,7 @@ header {
         width:100%;
         margin-bottom: -15px;
         background-image: radial-gradient(30px at 50% 0, #fff, #fff 49%, rgba(255,255,255,0) 51%, rgba(255,255,255,0));
-      -webkit-background-size: 32px 100%;
+        background-size: 32px 100%;
     }
 }
 
@@ -86,6 +90,12 @@ header {
         @include tab_sp {
             margin: 15px;
         }
+        @include tab {
+            margin: 15px;
+        }
+        @include pc_tab {
+            margin: 15px;
+        }
     }
     nav.gnavi{
         width: 100%;
@@ -109,7 +119,13 @@ header {
                 &.gnavi_flow_icon {
                     padding-left: 45px;
                 }
+                @include tab_sp {
+                    margin: 15px;
+                }
                 a {
+                    .sp_click {
+                        position: relative;
+                    }
                     color: #463729;
                     background: linear-gradient(#55b75a, #55b75a) right bottom / 0 .5em no-repeat;
 	                transition: background-size .4s cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -123,10 +139,6 @@ header {
                         background-position: left bottom;
 	                    background-size: 100% .5em;
                         @include tab_sp {
-                            background-color: #55b75a;
-                            color: #FFF;
-                            display:block;
-                            width:100%;
                         }
                     }
                 }
@@ -146,7 +158,7 @@ header {
         width: 45px;
         height: 45px;
         right: 15px;
-        top: 5px;
+        top: 10px;
         display: none;
         @include tab_sp {
             display: block;
@@ -202,47 +214,59 @@ header {
 
 .gnavi_icon {
     position: relative;
-    padding-left: 30px;
+    padding-left: 40px;
 }
 
 .gnavi_top_icon a::before {
     position: absolute;
     content: '';
-    height: 25px;
-    width: 25px;
-    top:-2;
+    height: 28px;
+    width: 39px;
+    top:-2px;
     left: 0;
     background:url(../img/icon_top.png);
+    @include tab_sp {
+        top:12px;
+    }
 }
 
 .gnavi_about_icon a::before {
     position: absolute;
     content: '';
-    height: 25px;
-    width: 26px;
-    top:-2;
+    height: 28px;
+    width: 39px;
+    top:-2px;
     left: 0;
     background:url(../img/icon_about.png);
+    @include tab_sp {
+        top:12px;
+    }
 }
 
 .gnavi_flow_icon a::before {
     position: absolute;
     content: '';
-    height: 25px;
-    width: 42px;
-    top:-2;
+    height: 28px;
+    width: 39px;
+    top:-2px;
     left: 0;
     background:url(../img/icon_flow.png);
+    @include tab_sp {
+        top:12px;
+    }
 }
 
 .gnavi_price_icon a::before {
     position: absolute;
     content: '';
-    height: 25px;
-    width: 25px;
-    top:-3;
+    height: 28px;
+    width: 39px;
+    top:-3px;
     left: 0;
     background:url(../img/icon_price.png);
+     @include tab_sp {
+        top:12px;
+    }
 }
 
 .main_visual {
@@ -260,7 +284,7 @@ main.top::before {
         height:15px;
         width:100%;
         background-image: radial-gradient(30px at 50% 0, rgba(255,255,255,0), rgba(255,255,255,0) 49%, #fff4ea 51%, #fff4ea);
-      -webkit-background-size: 32px 100%;
+        background-size: 32px 100%;
 }
 
 main.about {
@@ -286,12 +310,12 @@ main.about {
         li {
             width:calc( 100%/3);
             text-align: center;
+            margin-bottom: 30px;
             @include tab {
                 width:50% ;
             }
             @include sp {
                 width:100% ;
-                margin-bottom: 30px;
             }
             img {
                 height: 242px;
@@ -602,18 +626,23 @@ section {
         background-position: top left, top right ,bottom left, bottom right;
         height: 100%;
         width: 100%;
-
+        @include tab() {
+            position:relative;
+        }
     }
     .bg_flow {
         position: absolute;
         left: 0;
         top: 0;
         z-index: -1;
-        background: url("../img/top_flow_left.png"), url("../img/top_flow_right.png");
+        background: url("../img/bg_top_flow_left_top.png"), url("../img/bg_top_flow_right_top.png") ,url("../img/bg_top_flow_left_bottom.png"), url("../img/bg_top_flow_right_bottom.png");
         background-repeat: no-repeat,no-repeat ;
-        background-position: top left, top right;
+        background-position: top left, top right, bottom left, bottom right;
         height: 100%;
         width: 100%;
+        @include tab() {
+            position:relative;
+        }
     }
     .bg_price {
         position: absolute;
@@ -625,6 +654,9 @@ section {
         background-position: top left, top right;
         height: 100%;
         width: 100%;
+        @include tab() {
+            position:relative;
+        }
     }
 }
 
