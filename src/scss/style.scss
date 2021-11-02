@@ -303,7 +303,7 @@ main.about {
     max-width: 1000px;
     width: 100%;
     margin: 0px auto;
-    ul.top_inner {
+    .top_inner {
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
@@ -427,7 +427,7 @@ main.about {
         flex-direction: column;
     }
     @include tab_sp {
-        display: none;
+        width: auto;
     }
     h2.top_news_heading {
         width: 154px;
