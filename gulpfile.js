@@ -9,13 +9,13 @@ const browserSync = require('browser-sync');
 
 //setting : paths
 const paths = {
-  'root'    : './nursery/dist/',
-  'pug'     : './nursery/src/pug/**/*.pug',
-  'html'    : './nursery/dist/**/*.html',
-  'cssSrc'  : './nursery/src/scss/**/*.scss',
-  'cssDist'   : './nursery/dist/css/',
-  'jsSrc' : './nursery/src/js/**/*.js',
-  'jsDist': './nursery/dist/js/'
+  'root'    : '../nursery/dist/',
+  'pug'     : '../nursery/src/pug/**/*.pug',
+  'html'    : '../nursery/dist/**/*.html',
+  'cssSrc'  : '../nursery/src/scss/**/*.scss',
+  'cssDist'   : '../nursery/dist/css/',
+  'jsSrc' : '../nursery/src/js/**/*.js',
+  'jsDist': '../nursery/dist/js/'
 }
 
 //gulpコマンドの省略

@@ -25,7 +25,7 @@ $sp: 560px;  // sp
   @media (max-width: ($sp)) {
     @content;
   }
-}
+} 
 
 
 body {
@@ -138,8 +138,6 @@ header {
                     &:hover {
                         background-position: left bottom;
 	                    background-size: 100% .5em;
-                        @include tab_sp {
-                        }
                     }
                 }
             }
@@ -308,9 +306,12 @@ main.about {
         flex-wrap: wrap;
         justify-content: space-evenly;
         li {
-            width:calc( 100%/3);
+            width:calc( 100% / 3);
             text-align: center;
             margin-bottom: 30px;
+            a {
+                display: block;
+            }
             @include tab {
                 width:50% ;
             }
@@ -324,7 +325,7 @@ main.about {
                 -o-object-fit: cover;
                    object-fit: cover;
                 opacity: 1;
-                &:hover {
+                a:hover {
                     -webkit-animation: flash 1.5s;
                 animation: flash 1.5s;
                 @-webkit-keyframes flash {
@@ -426,9 +427,6 @@ main.about {
     @include tab {
         flex-direction: column;
     }
-    @include tab_sp {
-        width: auto;
-    }
     h2.top_news_heading {
         width: 154px;
         padding: 0 35px 0 45px;
@@ -446,6 +444,9 @@ main.about {
     }
     div {
         width: calc(100% - 154px);
+        @include sp {
+            width: auto;
+        }
     }
     dl {
         display: flex;
@@ -563,27 +564,6 @@ section {
             }
         }
     }
-    &.page_about_philosopy {
-        dl {
-            margin-bottom: 15px;
-            dt {
-                margin-bottom: 10px;
-            }
-            .icon_star {
-                position: relative;
-                padding-left: 15px;
-                &::before {
-                    position: absolute;
-                    content: url("../img/dd_icon.png");
-                    height: 10px;
-                    width: 11px;
-                    top:-2px;
-                    left: 0px;
-                }
-            }
-        }
-
-    }
     &.page_about_flow {
         margin-bottom: 140px;
         dl {
@@ -608,6 +588,26 @@ section {
         }
 
     }
+}
+
+.common_dl {
+        margin-bottom: 15px;
+        dt {
+            margin-bottom: 10px;
+        }
+        .icon_star {
+            position: relative;
+            padding-left: 15px;
+            &::before {
+                position: absolute;
+                content: url("../img/dd_icon.png");
+                height: 10px;
+                width: 11px;
+                top:-2px;
+                left: 0px;
+            }
+        }
+
 }
 
 .bg_img_wrap {
