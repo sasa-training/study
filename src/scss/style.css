@@ -369,7 +369,11 @@ main.about::before {
   opacity: 1;
 }
 
-.common_inner .top_inner li img a:hover {
+.common_inner .top_inner li img.orange {
+  background-color: #fff4ea;
+}
+
+.common_inner .top_inner li a:hover img {
   -webkit-animation: flash 1.5s;
   animation: flash 1.5s;
 }
@@ -390,10 +394,6 @@ main.about::before {
   100% {
     opacity: 1;
   }
-}
-
-.common_inner .top_inner li img.orange {
-  background-color: #fff4ea;
 }
 
 .common_inner .top_inner li h3 {
