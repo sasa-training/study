@@ -138,6 +138,7 @@ header nav.gnavi.open_toggle ul {
   display: block;
   width: 100%;
   margin: 20px 0 10px;
+  transition: all 0.3;
 }
 header .toggle_btn {
   background-color: #55b75a;
@@ -308,9 +309,6 @@ main.about::before {
   text-align: center;
   margin-bottom: 30px;
 }
-.common_inner .top_inner li a {
-  display: block;
-}
 @media (max-width: 800px) {
   .common_inner .top_inner li {
     width: 50%;
@@ -321,15 +319,11 @@ main.about::before {
     width: 100%;
   }
 }
-.common_inner .top_inner li img {
-  height: 242px;
-  width: 242px;
-  border-radius: 50%;
-  object-fit: cover;
-  opacity: 1;
+.common_inner .top_inner li a {
+  display: block;
 }
-.common_inner .top_inner li img a:hover {
-  animation: flash 1.5s;
+.common_inner .top_inner li a:hover {
+  animation: flash 2s;
 }
 @keyframes flash {
   0% {
@@ -339,14 +333,23 @@ main.about::before {
     opacity: 1;
   }
 }
-.common_inner .top_inner li img.orange {
-  background-color: #fff4ea;
+.common_inner .top_inner li img {
+  height: 242px;
+  width: 242px;
+  border-radius: 50%;
+  object-fit: cover;
+  opacity: 1;
 }
 .common_inner .top_inner li h3 {
   margin-top: 15px;
   font-size: 19px;
 }
-.common_inner .page_heading {
+
+.orange {
+  background-color: #fff4ea;
+}
+
+.page_heading {
   position: relative;
   display: block;
   width: 100%;
@@ -354,7 +357,8 @@ main.about::before {
   padding: 20px 20px 20px 60px;
   margin-bottom: 25px;
 }
-.common_inner .page_heading::before {
+
+.page_heading::before {
   position: absolute;
   content: "";
   height: 28px;

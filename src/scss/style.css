@@ -158,6 +158,7 @@ header nav.gnavi.open_toggle ul {
   display: block;
   width: 100%;
   margin: 20px 0 10px;
+  transition: all .3;
 }
 
 header .toggle_btn {
@@ -344,10 +345,6 @@ main.about::before {
   margin-bottom: 30px;
 }
 
-.common_inner .top_inner li a {
-  display: block;
-}
-
 @media (max-width: 800px) {
   .common_inner .top_inner li {
     width: 50%;
@@ -360,18 +357,13 @@ main.about::before {
   }
 }
 
-.common_inner .top_inner li img {
-  height: 242px;
-  width: 242px;
-  border-radius: 50%;
-  -o-object-fit: cover;
-  object-fit: cover;
-  opacity: 1;
+.common_inner .top_inner li a {
+  display: block;
 }
 
-.common_inner .top_inner li img a:hover {
-  -webkit-animation: flash 1.5s;
-  animation: flash 1.5s;
+.common_inner .top_inner li a:hover {
+  -webkit-animation: flash 2s;
+  animation: flash 2s;
 }
 
 @-webkit-keyframes flash {
@@ -392,8 +384,13 @@ main.about::before {
   }
 }
 
-.common_inner .top_inner li img.orange {
-  background-color: #fff4ea;
+.common_inner .top_inner li img {
+  height: 242px;
+  width: 242px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  opacity: 1;
 }
 
 .common_inner .top_inner li h3 {
@@ -401,7 +398,11 @@ main.about::before {
   font-size: 19px;
 }
 
-.common_inner .page_heading {
+.orange {
+  background-color: #fff4ea;
+}
+
+.page_heading {
   position: relative;
   display: block;
   width: 100%;
@@ -410,7 +411,7 @@ main.about::before {
   margin-bottom: 25px;
 }
 
-.common_inner .page_heading::before {
+.page_heading::before {
   position: absolute;
   content: '';
   height: 28px;

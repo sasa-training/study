@@ -147,6 +147,7 @@ header {
                 display: block;
                 width: 100%;
                 margin: 20px 0 10px;
+                transition: all .3;
             }
         }
     }
@@ -309,14 +310,34 @@ main.about {
             width:calc( 100% / 3);
             text-align: center;
             margin-bottom: 30px;
-            a {
-                display: block;
-            }
             @include tab {
                 width:50% ;
             }
             @include sp {
                 width:100% ;
+            }
+            a {
+                display: block;
+                &:hover {
+                    -webkit-animation: flash 2s;
+                    animation: flash 2s;
+                    @-webkit-keyframes flash {
+                        0% {
+                        opacity: .4;
+                        }
+                        100% {
+                        opacity: 1;
+                        }
+                    }
+                    @keyframes flash {
+                        0% {
+                        opacity: .4;
+                        }
+                        100% {
+                        opacity: 1;
+                        }
+                    }
+                }
             }
             img {
                 height: 242px;
@@ -325,53 +346,35 @@ main.about {
                 -o-object-fit: cover;
                    object-fit: cover;
                 opacity: 1;
-                a:hover {
-                    -webkit-animation: flash 1.5s;
-                animation: flash 1.5s;
-                @-webkit-keyframes flash {
-                    0% {
-                      opacity: .4;
-                    }
-                    100% {
-                      opacity: 1;
-                    }
-                  }
-                  @keyframes flash {
-                    0% {
-                      opacity: .4;
-                    }
-                    100% {
-                      opacity: 1;
-                    }
-                  }
                 }
-                &.orange {
-                    background-color: #fff4ea;
-                }
-            }
             h3 {
                 margin-top: 15px;
                 font-size: 19px;
             }
         }
     }
-    .page_heading {
-        position: relative;
-        display: block;
-        width: 100%;
-        background-color: #fff4ea;
-        padding: 20px 20px 20px 60px;
-        margin-bottom: 25px;
-    }
-    .page_heading::before {
-        position: absolute;
-        content: '';
-        height: 28px;
-        width: 32px;
-        top:15px;
-        left: 20px;
-        background:url(../img/icon_top2.png);
-    }
+}
+
+.orange {
+    background-color: #fff4ea;
+}
+
+.page_heading {
+    position: relative;
+    display: block;
+    width: 100%;
+    background-color: #fff4ea;
+    padding: 20px 20px 20px 60px;
+    margin-bottom: 25px;
+}
+.page_heading::before {
+    position: absolute;
+    content: '';
+    height: 28px;
+    width: 32px;
+    top:15px;
+    left: 20px;
+    background:url(../img/icon_top2.png);
 }
 
 
