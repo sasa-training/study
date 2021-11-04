@@ -1,4 +1,4 @@
-$(function() {
+$(function(){
   // ナビ 
   $('.toggle_btn').click(function() {
     $(this).toggleClass('open_toggle');
