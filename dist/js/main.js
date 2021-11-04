@@ -1,5 +1,5 @@
 $(function() {
-  // ナビ
+  // ナビ 
   $('.toggle_btn').click(function() {
     $(this).toggleClass('open_toggle');
     if ($(this).hasClass('open_toggle')) {
