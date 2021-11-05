@@ -105,7 +105,7 @@ header {
             position: fixed;
             background-color: #FFF;
         }
-        ul {
+        ul{
             display: flex;
             flex-direction: row;
             justify-content: space-evenly;
@@ -113,7 +113,7 @@ header {
             @include tab_sp {
                 display: none;
             }
-            li {
+            li{
                 font-size: 18px;
                 margin: 30px;
                 &.gnavi_flow_icon {
@@ -128,7 +128,7 @@ header {
                     }
                     color: #463729;
                     background: linear-gradient(#55b75a, #55b75a) right bottom / 0 .5em no-repeat;
-	                transition: background-size .4s cubic-bezier(0.215, 0.61, 0.355, 1);
+	                transition: background-size .4s cubic-bezier(.215, .61, .355, 1);
                     @include tab_sp {
                             display:block;
                             width:100%;
@@ -143,11 +143,11 @@ header {
             }
         }
         &.open_toggle {
-            ul {
+            ul{
                 display: block;
                 width: 100%;
                 margin: 20px 0 10px;
-            }
+            } 
         }
     }
     .toggle_btn {
