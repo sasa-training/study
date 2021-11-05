@@ -103,19 +103,10 @@ header nav.gnavi {
 }
 
 header nav.gnavi ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 @media (max-width: 700px) {
@@ -141,9 +132,7 @@ header nav.gnavi ul li.gnavi_flow_icon {
 
 header nav.gnavi ul li a {
   color: #463729;
-  background: -webkit-gradient(linear, left top, left bottom, from(#55b75a), to(#55b75a)) right bottom/0 0.5em no-repeat;
   background: linear-gradient(#55b75a, #55b75a) right bottom/0 0.5em no-repeat;
-  -webkit-transition: background-size 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
   transition: background-size 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
@@ -195,7 +184,6 @@ header .toggle_btn span {
   height: 4px;
   display: block;
   background-color: #FFF;
-  -webkit-transition: all .5s;
   transition: all .5s;
 }
 
@@ -221,19 +209,16 @@ header .toggle_btn span::after {
 
 header .toggle_btn.open_toggle span {
   background: rgba(30, 30, 30, 0);
-  -webkit-transition: all .5s;
   transition: all .5s;
 }
 
 header .toggle_btn.open_toggle span::before {
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
   top: 0px;
 }
 
 header .toggle_btn.open_toggle span::after {
-  -webkit-transform: rotate(-45deg);
-          transform: rotate(-45deg);
+  transform: rotate(-45deg);
   top: 0px;
 }
 
@@ -348,14 +333,9 @@ main.about::before {
 }
 
 .common_inner .top_inner {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 
 .common_inner .top_inner li {
@@ -441,12 +421,8 @@ main.about::before {
 }
 
 .heading_area {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   margin-bottom: 50px;
 }
 
@@ -473,16 +449,9 @@ main.about::before {
 
 .news {
   max-width: 1000px;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  flex-direction: row;
+  align-items: center;
   width: 100%;
   margin: 0 auto;
   padding: 20px 14px;
@@ -507,10 +476,7 @@ main.about::before {
 
 @media (max-width: 800px) {
   .news {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -542,23 +508,14 @@ main.about::before {
 }
 
 .news dl {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -ms-flex-line-pack: center;
-      align-content: center;
+  flex-direction: row;
+  align-content: center;
 }
 
 @media (max-width: 560px) {
   .news dl {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    flex-direction: column;
   }
 }
 
@@ -571,15 +528,9 @@ main.about::before {
   width: 100%;
   background-color: #fff4ea;
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: center;
+  align-items: center;
   z-index: -1;
 }
 
@@ -704,20 +655,11 @@ section.page_about_flow {
 }
 
 section.page_about_flow dl {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   margin-bottom: 20px;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 section.page_about_flow dl dt {
@@ -828,4 +770,3 @@ footer {
   text-align: center;
   padding: 30px 0 40px;
 }
-/*# sourceMappingURL=style.css.map */
