@@ -61,6 +61,19 @@ header {
     background-color: #FFF;
   }
 }
+header.fixed {
+  position: fixed;
+  z-index: 9999;
+  background-color: #FFF;
+  margin-top: 0px;
+  padding-top: 10px;
+}
+header.fixed h1 {
+  display: none;
+}
+header.fixed .gnavi {
+  margin: 0;
+}
 header h1 img {
   max-width: 189px;
   width: 100%;
