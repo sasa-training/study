@@ -89,9 +89,11 @@ header {
         z-index: 9999;
         background-color: #FFF;
         margin-top: 0px;
-        padding-top: 10px;
         h1 {
             display: none;
+            @include tab {
+                display: initial;
+            }
         }
         .gnavi {
             margin: 0;
@@ -164,42 +166,42 @@ header {
         }
     }
     .toggle_btn {
-        background-color: #55b75a;
+        background-color: #FFF;
         position: fixed;
         width: 45px;
         height: 45px;
-        right: 15px;
-        top: 10px;
+        right: 10px;
+        top: 15px;
         display: none;
         @include tab_sp {
             display: block;
         }
         span{
             position: absolute;
-            top: 20px;
+            top: 15px;
             left: 5px;
-            width: 35px;
-            height: 4px;
+            width: 30px;
+            height: 3px;
             display: block;
-            background-color: #FFF;
+            background-color: #55b75a;
             transition: all .5s;
         &::before {
             content: "";
             position: absolute;
-            top: -12px;
+            top: -10px;
             left: 0px;
-            width: 35px;
-            height: 4px;
-            background-color: #FFF;
+            width: 30px;
+            height: 3px;
+            background-color: #55b75a;
             }
         &::after {
             content: "";
             position: absolute;
-            top: 12px;
+            top: 10px;
             left: 0px;
-            width: 35px;
-            height: 4px;
-            background-color: #FFF;
+            width: 30px;
+            height: 3px;
+            background-color: #55b75a;
             }
         }
         &.open_toggle {
