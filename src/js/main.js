@@ -2,16 +2,18 @@ $(function() {
   ///ヘッダー追従
   // リロード時
   if (window.matchMedia( "(min-width: 700px)" ).matches) {
+    let $element = "header";
+    let $elementClass = "fixed";
     $(window).scroll(function () {
       if($(window).scrollTop() > 150) {
-        $('header').addClass('fixed');
+        $('$element').addClass('$elementClass');
       } else {
-        $('header').removeClass('fixed');
+        $('$element').removeClass('$elementClass');
       }
     });
   }else{
     $(window).scroll(function () {
-        $('header').removeClass('fixed');
+        $('$element').removeClass('$elementClass');
     });
   };
   /// ナビ 
