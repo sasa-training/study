@@ -1,36 +1,41 @@
 $(function() {
   ///ヘッダー追従
   // リロード時
+  let element1 = 'header';
+  let element2 = $(window);
+  let element1Class = 'fixed';
+
   if (window.matchMedia( "(min-width: 700px)" ).matches) {
-    let $element = "header";
-    let $elementClass = "fixed";
-    $(window).scroll(function () {
-      if($(window).scrollTop() > 150) {
-        $('$element').addClass('$elementClass');
+    element2.scroll(function () {
+      if(element2.scrollTop() > 150) {
+        $(element1).addClass(element1Class);
       } else {
-        $('$element').removeClass('$elementClass');
+        $(element1).removeClass(element1Class);
       }
     });
   }else{
-    $(window).scroll(function () {
-        $('$element').removeClass('$elementClass');
+    element2.scroll(function () {
+        $(element1).removeClass(element1Class);
     });
   };
+  let element3 = 'nav';
+  let element4 = 'button';
+  let element34Class = 'open_toggle';
   /// ナビ 
   $(".toggle_btn").click(function() {
-    $(this).toggleClass("open_toggle");
-    if ($(this).hasClass("open_toggle")) {
-      $("nav").addClass("open_toggle");
+    $(this).toggleClass(element34Class);
+    if ($(this).hasClass(element34Class)) {
+      $(element3).addClass(element34Class);
     } else {
-      $("nav").removeClass("open_toggle");
+      $(element3).removeClass(element34Class);
     } 
   });
   // リロード時
   // ウィンドウサイズ700px以下の場合、クラスを削除
   if (window.matchMedia( "(max-width: 700px)" ).matches) {
     $(function(){
-      $("nav").removeClass("open_toggle");
-      $("button").removeClass("open_toggle");
+      $(element3).removeClass(element34Class);
+      $(element4).removeClass(element34Class);
     });
   };
   // リサイズ時
@@ -38,8 +43,8 @@ $(function() {
     let $windowWidth = $(window).width();
     let $breakpoints = 700;
     if ($windowWidth > $breakpoints) {
-      $("nav").removeClass("open_toggle");
-      $("button").removeClass("open_toggle");
+      $(element3).removeClass(element34Class);
+      $(element4).removeClass(element34Class);
     }
   });
   // スライダー
