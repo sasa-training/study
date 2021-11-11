@@ -3,23 +3,17 @@ $(function() {
   // リロード時
   if (window.matchMedia( "(min-width: 700px)" ).matches) {
     $(window).scroll(function () {
-      if($(window).scrollTop() > 300) {
+      if($(window).scrollTop() > 150) {
         $('header').addClass('fixed');
       } else {
         $('header').removeClass('fixed');
       }
     });
+  }else{
+    $(window).scroll(function () {
+        $('header').removeClass('fixed');
+    });
   };
-  // リサイズ時
-  $(window).resize(function(){
-    let $windowWidth = $(window).width();
-    let $breakpoints = 700;
-    if ($windowWidth < $breakpoints) {
-      $("header").removeClass("fixed");
-    }else{
-      $("header").add("fixed");
-    }
-  });
   /// ナビ 
   $(".toggle_btn").click(function() {
     $(this).toggleClass("open_toggle");
