@@ -75,7 +75,6 @@ header {
     padding-top: 25px;
     width: 100%;
     position: relative;
-    background-color: #FFF;
     @include tab_sp {
         padding-top: 0;
         position: fixed;
@@ -83,10 +82,12 @@ header {
         left: 0;
         height: 60px;
         z-index: 10000;
+        background-color: #FFF;
     }
     &.fixed{
         position: fixed;
         z-index: 9999;
+        background-color: #FFF;
         .gnavi {
             margin: 0;
         }
