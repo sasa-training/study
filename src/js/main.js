@@ -1,50 +1,51 @@
 $(function() {
   ///ヘッダー追従
   // リロード時
-  let element1 = 'header';
-  let element2 = $(window);
-  let element1Class = 'fixed';
+  const $header = $('header');
+  const $window = $(window);
+  const fixed = 'fixed';
 
   if (window.matchMedia( "(min-width: 700px)" ).matches) {
-    element2.scroll(function () {
-      if(element2.scrollTop() > 150) {
-        $(element1).addClass(element1Class);
+    $window.scroll(function () {
+      if($window.scrollTop() > 150) {
+        $header.addClass(fixed);
       } else {
-        $(element1).removeClass(element1Class);
+        $header.removeClass(fixed);
       }
     });
   }else{
-    element2.scroll(function () {
-        $(element1).removeClass(element1Class);
+    $window.scroll(function () {
+        $header.removeClass(fixed);
     });
   };
-  let element3 = 'nav';
-  let element4 = 'button';
-  let element34Class = 'open_toggle';
+  const $nav = $('nav');
+  const button = 'button';
+  const open_toggle = 'open_toggle';
   /// ナビ 
   $(".toggle_btn").click(function() {
-    $(this).toggleClass(element34Class);
-    if ($(this).hasClass(element34Class)) {
-      $(element3).addClass(element34Class);
+    const $this = $(this);
+    $this.toggleClass(open_toggle);
+    if ($this.hasClass(open_toggle)) {
+      $nav.addClass(open_toggle);
     } else {
-      $(element3).removeClass(element34Class);
+      $nav.removeClass(open_toggle);
     } 
   });
   // リロード時
   // ウィンドウサイズ700px以下の場合、クラスを削除
   if (window.matchMedia( "(max-width: 700px)" ).matches) {
     $(function(){
-      $(element3).removeClass(element34Class);
-      $(element4).removeClass(element34Class);
+      $nav.removeClass(open_toggle);
+      $(button).removeClass(open_toggle);
     });
   };
   // リサイズ時
-  $(window).resize(function(){
-    let $windowWidth = $(window).width();
+  $window.resize(function(){
+    let $windowWidth = $window.width();
     let $breakpoints = 700;
     if ($windowWidth > $breakpoints) {
-      $(element3).removeClass(element34Class);
-      $(element4).removeClass(element34Class);
+      $nav.removeClass(open_toggle);
+      $(button).removeClass(open_toggle);
     }
   });
   // スライダー
