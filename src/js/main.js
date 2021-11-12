@@ -19,7 +19,7 @@ $(function() {
     });
   };
   const $nav = $('nav');
-  const button = 'button';
+  const $button = $('button');
   const open_toggle = 'open_toggle';
   /// ナビ 
   $(".toggle_btn").click(function() {
@@ -36,7 +36,7 @@ $(function() {
   if (window.matchMedia( "(max-width: 700px)" ).matches) {
     $(function(){
       $nav.removeClass(open_toggle);
-      $(button).removeClass(open_toggle);
+      $button.removeClass(open_toggle);
     });
   };
   // リサイズ時
@@ -45,7 +45,7 @@ $(function() {
     let $breakpoints = 700;
     if ($windowWidth > $breakpoints) {
       $nav.removeClass(open_toggle);
-      $(button).removeClass(open_toggle);
+      $button.removeClass(open_toggle);
     }
   });
   // スライダー
